@@ -23,7 +23,7 @@
     <parent>
         <groupId>com.adobe.cq.sample.spa</groupId>
         <artifactId>we-retail-journal</artifactId>
-        <version>1.1.9-SNAPSHOT</version>
+        <version>1.2.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -32,7 +32,7 @@
     <!-- ====================================================================== -->
     <artifactId>we-retail-journal-all</artifactId>
     <packaging>content-package</packaging>
-    <version>1.1.9-SNAPSHOT</version>
+    <version>1.2.1-SNAPSHOT</version>
 
     <name>We.Retail Journal All-in-One</name>
     <description>All-in-One package for We.Retail Journal</description>
@@ -85,6 +85,11 @@
                     </embeddeds>
 
                     <subPackages>
+                        <subPackage>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>we-retail-journal-apps</artifactId>
+                            <filter>true</filter>
+                        </subPackage>
                         <subPackage>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>we-retail-journal-content</artifactId>
@@ -174,6 +179,13 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>we-retail-journal-ssr</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>we-retail-journal-apps</artifactId>
+            <version>${project.version}</version>
+            <type>zip</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
